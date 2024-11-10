@@ -1,0 +1,28 @@
+{
+    "manifest_version": 3,
+    "name": "RoSearcher",
+    "version": "11",
+    "description": "Search through a Roblox game server list for any user",
+    "permissions": [
+      "scripting"
+    ],
+    "background": {
+        "service_worker": "background.js"
+      },
+      "host_permissions": [
+        "https://*.roblox.com/games/"
+    ],
+    "content_scripts": [
+      {
+        "matches": ["*://*.roblox.com/*"],
+        "js": ["content.js"]
+      }
+    ],
+    "web_accessible_resources": [
+      {
+        "resources": ["images/loading.png", "images/logo.png"],
+        "matches": ["http://*/*","https://*/*"]
+      }
+    ]
+  }
+  
